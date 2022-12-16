@@ -24,7 +24,10 @@ cat:
 ``` r
 library(ggplot2)
 library(ggstephen)
-ggplot(mtcars) +
- geom_stephen(aes(mpg, wt), stephen = "cat") +
- theme_bw()
+
+ggplot(mtcars) + geom_stephen(aes(mpg, wt))
+
+ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "stephen2")
+
+ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "cat")
 ```

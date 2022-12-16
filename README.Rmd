@@ -35,7 +35,10 @@ This is a basic example which shows you how plot data using Stephen's cat:
 ```{r example, eval=FALSE}
 library(ggplot2)
 library(ggstephen)
-ggplot(mtcars) +
- geom_stephen(aes(mpg, wt), stephen = "cat") +
- theme_bw()
+
+ggplot(mtcars) + geom_stephen(aes(mpg, wt))
+
+ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "stephen2")
+
+ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "cat")
 ```
