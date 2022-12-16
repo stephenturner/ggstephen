@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggstephen.R
 \name{draw_key_stephen}
 \alias{draw_key_stephen}
-\title{Key stephen}
+\title{Key Stephen}
 \usage{
 draw_key_stephen(data, params, size)
 }
@@ -10,5 +10,5 @@ draw_key_stephen(data, params, size)
 \item{data, params, size}{key stuff}
 }
 \description{
-Key stephen
+Key Stephen
 }

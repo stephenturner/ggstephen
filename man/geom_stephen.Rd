@@ -2,7 +2,7 @@
 % Please edit documentation in R/ggstephen.R
 \name{geom_stephen}
 \alias{geom_stephen}
-\title{stephen layer}
+\title{Stephen layer}
 \usage{
 geom_stephen(
   mapping = NULL,
@@ -62,11 +62,19 @@ that define both data and aesthetics and shouldn't inherit behaviour from
 the default plot specification, e.g. \code{\link[ggplot2:borders]{borders()}}.}
 }
 \description{
-The geom is used to add stephen to plots. See ?ggplot2::geom_points for more info.
+The geom is used to add Stephen to plots. See ?ggplot2::geom_points for more info.
 }
 \examples{
 
 library(ggplot2)
+
+ggplot(mtcars) +
+ geom_stephen(aes(mpg, wt)) +
+ theme_bw()
+
+ggplot(mtcars) +
+ geom_stephen(aes(mpg, wt), stephen = "stephen2") +
+ theme_bw()
 
 ggplot(mtcars) +
  geom_stephen(aes(mpg, wt), stephen = "cat") +

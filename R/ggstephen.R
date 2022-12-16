@@ -1,17 +1,19 @@
-#' Key stephen
+#' Key Stephen
 #'
 #' @param data,params,size key stuff
 draw_key_stephen <-  function(data, params, size) {
 
   filename <- system.file(paste0(data$stephen, ".png"), package = "ggstephen", mustWork = TRUE)
-  # print(filename)
   img <- as.raster(png::readPNG(filename))
   aspect <- dim(img)[1]/dim(img)[2]
-  # rasterGrob
   grid::rasterGrob(image = img)
 }
 
-stephenGrob <- function(x, y, size, stephen = "cat", geom_key = list(cat = "cat.png")) {
+stephenGrob <- function(x, y, size,
+                        stephen = "stephen1",
+                        geom_key = list(cat = "cat.png",
+                                        stephen1="stephen1.png",
+                                        stephen2="stephen2.png")) {
 
   filename <- system.file(geom_key[[unique(stephen)]], package = "ggstephen", mustWork = TRUE)
   img <- as.raster(png::readPNG(filename))
@@ -28,15 +30,15 @@ Geomstephen <- ggplot2::ggproto(`_class` = "Geomstephen",
                                `_inherit` = ggplot2::Geom,
                                required_aes = c("x", "y"),
                                non_missing_aes = c("size", "stephen"),
-                               default_aes = ggplot2::aes(size = 1,
-                                                          stephen = "cat",
+                               default_aes = ggplot2::aes(size = .8,
+                                                          stephen = "stephen1",
                                                           shape  = 19,
                                                           colour = "black",
                                                           fill   = NA,
                                                           alpha  = NA,
                                                           stroke =  0.5,
                                                           scale = 5,
-                                                          image_filename = "cat"),
+                                                          image_filename = "stephen1"),
 
                                draw_panel = function(data, panel_scales, coord, na.rm = FALSE) {
                                  coords <- coord$transform(data, panel_scales)
@@ -49,12 +51,20 @@ Geomstephen <- ggplot2::ggproto(`_class` = "Geomstephen",
 
                                draw_key = draw_key_stephen)
 
-#' @title stephen layer
-#' @description The geom is used to add stephen to plots. See ?ggplot2::geom_points for more info.
+#' @title Stephen layer
+#' @description The geom is used to add Stephen to plots. See ?ggplot2::geom_points for more info.
 #' @inheritParams ggplot2::geom_point
 #' @examples
 #'
 #' library(ggplot2)
+#'
+#' ggplot(mtcars) +
+#'  geom_stephen(aes(mpg, wt)) +
+#'  theme_bw()
+#'
+#' ggplot(mtcars) +
+#'  geom_stephen(aes(mpg, wt), stephen = "stephen2") +
+#'  theme_bw()
 #'
 #' ggplot(mtcars) +
 #'  geom_stephen(aes(mpg, wt), stephen = "cat") +
