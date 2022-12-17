@@ -1,13 +1,10 @@
-#' Key Stephen
-#'
-#' @param data,params,size key stuff
 draw_key_stephen <-  function(data, params, size) {
-
   filename <- system.file(paste0(data$stephen, ".png"), package = "ggstephen", mustWork = TRUE)
   img <- as.raster(png::readPNG(filename))
   aspect <- dim(img)[1]/dim(img)[2]
   grid::rasterGrob(image = img)
 }
+
 
 stephenGrob <- function(x, y, size,
                         stephen = "stephen1",
@@ -25,6 +22,7 @@ stephenGrob <- function(x, y, size,
                    # stays the same size regardless of the dimensions of the plot
                    height = size * ggplot2::unit(20, "mm"))
 }
+
 
 Geomstephen <- ggplot2::ggproto(`_class` = "Geomstephen",
                                `_inherit` = ggplot2::Geom,
