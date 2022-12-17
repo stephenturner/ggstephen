@@ -9,7 +9,9 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%", 
+  message=FALSE, 
+  warning=FALSE
 )
 ```
 
@@ -30,15 +32,21 @@ remotes::install_github("stephenturner/ggstephen")
 
 ## Example
 
-This is a basic example which shows you how plot data using Stephen's cat:
+This is a basic example which shows you how plot data `geom_stephen()`. Additional examples show alternate geoms. For help see `?geom_stephen`.
 
-```{r example, eval=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(ggplot2)
 library(ggstephen)
+theme_set(theme_classic())
+```
 
+```{r example, eval=TRUE, message=FALSE}
+# The default geom is "stephen1"
 ggplot(mtcars) + geom_stephen(aes(mpg, wt))
 
+# Alternate geom
 ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "stephen2")
 
+# Stephen's cat "pancake"
 ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "cat")
 ```

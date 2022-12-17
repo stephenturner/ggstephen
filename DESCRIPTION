@@ -1,8 +1,8 @@
 Package: ggstephen
-Title: A Geom for Adding Stephens
+Title: A Geom for Adding Stephen to ggplot2 objects
 Version: 0.1.0
 Authors@R: person("Stephen", "Turner", email = "vustephen@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9140-9028"))
-Description: Allows adding Stephen to ggplot2 as a geom equivalent to geom_point.
+Description: Allows adding Stephen to ggplot2 as a geom equivalent to geom_point. 
 License: GPL (>= 3)
 Encoding: UTF-8
 Imports: ggplot2, png
