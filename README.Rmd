@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%", 
+  # out.width = "100%", 
+  # fig.align = 'center',
   message=FALSE, 
   warning=FALSE
 )
@@ -34,7 +35,7 @@ remotes::install_github("stephenturner/ggstephen")
 
 This is a basic example which shows you how plot data `geom_stephen()`. Additional examples show alternate geoms. For help see `?geom_stephen`.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, fig.align='center'}
 library(ggplot2)
 library(ggstephen)
 theme_set(theme_classic())

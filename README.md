@@ -32,7 +32,7 @@ theme_set(theme_classic())
 ggplot(mtcars) + geom_stephen(aes(mpg, wt))
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+![](man/figures/README-example-1.png)<!-- -->
 
 ``` r
 
@@ -40,7 +40,7 @@ ggplot(mtcars) + geom_stephen(aes(mpg, wt))
 ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "stephen2")
 ```
 
-<img src="man/figures/README-example-2.png" width="100%" />
+![](man/figures/README-example-2.png)<!-- -->
 
 ``` r
 
@@ -48,4 +48,4 @@ ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "stephen2")
 ggplot(mtcars) + geom_stephen(aes(mpg, wt), stephen = "cat")
 ```
 
-<img src="man/figures/README-example-3.png" width="100%" />
+![](man/figures/README-example-3.png)<!-- -->
